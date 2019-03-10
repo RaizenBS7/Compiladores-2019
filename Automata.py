@@ -10,7 +10,7 @@ def main():
             MY = '^[(>)]'
             MN = '^[(<)]'
             MAS = '^[(+)]'
-            MEN = '^[(-)]'
+            MEN = '-'
             IG = '^[(=)]'
             BAR = '^[(/)]'
             EXC = '^[(!)]'
@@ -38,6 +38,7 @@ def main():
                 for line in f: #Leo linea por linea
                     for char in line: #Leyendo caracter por caratcer
                         Cadena = Cadena + str(char)
+                        #print(char)
                         if char == '.':
                             char = 11
                         elif re.match(D, char):
@@ -70,7 +71,7 @@ def main():
                         #print(char)
                         if EDO > 11:
                             if EDO < 300:
-                                print('Estado final: ' + str(EDO) + ' con caracter "' + Cadena + '"')
+                                print('Estado final: ' + str(EDO) + ' con la cadena: "' + Cadena + '"')
                                 EDO = 0
                                 Cadena = ''
                             else:
