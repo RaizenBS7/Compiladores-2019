@@ -37,8 +37,7 @@ def main():
                 f.readline()
                 for line in f: #Leo linea por linea
                     for char in line: #Leyendo caracter por caratcer
-                        Cadena = Cadena + str(char)
-                        #print(char)
+                        Characterantes = str(char)
                         if char == '.':
                             char = 11
                         elif re.match(D, char):
@@ -74,10 +73,15 @@ def main():
                                 print('Estado final: ' + str(EDO) + ' con la cadena: "' + Cadena + '"')
                                 EDO = 0
                                 Cadena = ''
+                                Cadena = Characterantes
+                                Characterantes = ''
                             else:
                                 #print('error' + str(EDO))
                                 EDO = 0
                                 Cadena = ''
+                        else:
+                            Cadena = Cadena + Characterantes
+
             break
         f.close()
 
