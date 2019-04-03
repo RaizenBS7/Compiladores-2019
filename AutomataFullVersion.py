@@ -128,11 +128,12 @@ def main():
         if (edo >= 205 and edo <= 226):
             if cadena_resultado in simbolos:
                 tk = simbolos[cadena_resultado]
-                tokens.append([777,tk])
-                print(tokens)
+                tokens.append([1000,tk])
+
 
         cadena_resultado = ""
         edo = 0
+
 
     if not linea:
       break  # Si no hay más se rompe bucle
@@ -140,8 +141,9 @@ def main():
 #    print(ascii_list)
     alfanumeric_list.clear()
     ascii_list.clear()
-  archivo.close()  # Cierra archivo
 
+  archivo.close()  # Cierra archivo
+  #print(tokens)#-------------------
 #matriz de estados
 matriz = [#   0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,  15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,  27
           # dig, E/e, let,   >,   <,   +,   -,   =,   !,   /,   *,   %,   #,   .,   :,   {,   },   [,   ],   (,   ),   ;,   ,,   |,   &,   ',   ", esp
