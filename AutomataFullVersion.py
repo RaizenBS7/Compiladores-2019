@@ -296,7 +296,6 @@ def obtener_columna(charAscii):
   elif (charAscii == 34):
     columna = 26
 
-  #detectar espacio #detectar nueva linea #detectar retorno de carro #detectar fin de texto
   #detectar si es NULL
   elif (charAscii == 32 or charAscii == 10 or charAscii == 13 or charAscii == 3 or charAscii == 0):
       columna = 27
