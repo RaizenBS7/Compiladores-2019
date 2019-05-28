@@ -1,7 +1,1 @@
-/*Hola Mundo*/
-"abfdasiyt8g87673g2"
-155 654.54
-5465.2 xyz XYZ
-654
-ad8
->=  <= ()
+main start x : int end  start end

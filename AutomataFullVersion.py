@@ -447,3 +447,6 @@ def retornar_lugar(edo):
 
 if __name__ == '__main__':
   main()
+#Programa realizado por Maximiliano Garcia De Santiago
+#Copyright (c) all rights reserved
+#Contato [Facebook]:Max Garcia [Email]:max-gds96@hotmail.com

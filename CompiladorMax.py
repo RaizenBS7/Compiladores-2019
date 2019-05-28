@@ -1,3 +1,4 @@
+
 def main():
     cadena_resultado = ''
     columna = 0
@@ -7,41 +8,46 @@ def main():
     constantes = []
     tokens = []
     variables = []
-    variables.clear()
 
     reservadas = {"main": "501",
-                "start": "502",
-                "end": "503",
+                "then": "502",
+                "repeat": "503",
                 "int": "504",
                 "dec": "505",
                 "string": "506",
-                "condition": "507",
-                "during": "508",
-                "do": "509",
-                "repeat": "510",
-                "then": "511",
-                "and": "5012",
+                "for" : "507",
+                "condition": "508",
+                "during": "509",
+                "do": "510",
+                "cases" : "511",
+                "and": "512",
                 "or": "513",
-                "not": "514"
+                "not": "514",
+                # "identificado" : "115",
+                "numero" : "115",
+                "start": "516",
+                "end": "517"
                 } #Se crea el diccionario de palabras reservadas
     simbolos = {  "<": "1001",
                   ">": "1002",
-                  "+": "1003",
-                  "-": "1004",
-                  "=": "1005",
-                  "/": "1006",
-                  "*": "1007",
-                  ".": "1008",
-                  ",": "1009",
-                  ";": "1010",
-                  ":": "1011",
-                  "(": "1012",
-                  ")": "1013",
-                  "'": "1014",
-                  "<>": "1015",
+                  "(": "1003",
+                  ")": "1004",
+                  "+": "1005",
+                  "-": "1006",
+                  ",": "1007",
+                  ";": "1008",
+                  ":": "1009",
+                  "=": "1010",
+                  "*": "1011",
+                  "/": "1012",
+                  "++": "1013",
+                  ":=": "1014",
+                  ">=": "1015",
                   "<=": "1016",
-                  ">=": "1017",
-                  "esp": "1018"
+                  "<>": "1017",
+                  ".": "1018",
+                  "'": "1019",
+                  "esp": "1020"
                   } #se crea el diccionario de cimbolos especiales reservados
 
     archivo = open('Lector.txt', 'r') #Se indica el archivo que leera
@@ -88,7 +94,7 @@ def main():
                         if cadena_resultado not in variables:
                             variables.append(cadena_resultado)
                             ind = variables.index(cadena_resultado)
-                            tokens.append([2000, ind])
+                            tokens.append([ind, 2000])
                         else:
                             ind = variables.index(cadena_resultado)
                             tokens.append([2000, ind])
@@ -100,7 +106,7 @@ def main():
                     if cadena_resultado not in constantes:
                         constantes.append(cadena_resultado)
                         tk = constantes.index(cadena_resultado)
-                        tokens.append([700, tk])
+                        tokens.append([tk, 700])
 
                 cadena_resultado = ""
                 edo = 0
@@ -115,7 +121,17 @@ def main():
     archivo.close()  # Cierra archivo
 
 
-    print(tokens)#-------------------
+    # print(tokens)#-------------------
+    # print(variables)
+    # print(constantes)
+    return tokens
+    # x = -len(tokens) se usara esta linea en el sintatico
+    # TOP = tokens.pop(x) seeee usara esta linea en el sintatico
+    # print(TOP)
+    # ListaDeCabeza.append(TOP)
+    # print(ListaDeCabeza)
+    # while tokens:
+
     #matriz de estados
 matriz=[#   0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,  15,  16,  17
         # dig, E/e, let,   <,   >,   +,   -,   =,   /,   *,   .,   ,,   ;,   :,   (,   ),   ", esp,
@@ -313,3 +329,6 @@ def retornar_lugar(edo):
 
 if __name__ == '__main__':
   main()
+#Programa realizado por Maximiliano Garcia De Santiago
+#Copyright (c) all rights reserved
+#Contato [Facebook]:Max Garcia [Email]:max-gds96@hotmail.com
